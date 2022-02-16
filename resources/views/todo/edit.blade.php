@@ -14,7 +14,6 @@
                     <form action="{{route('todo.update', $t->id)}}" method="POST">
                         @csrf
                         {{ method_field('PUT') }}
-                        <input type="hidden" name="status" value="{{ $t->isDone }}">
                         <div class="mb-3">
                             <label for="input" class="form-label">Name</label>
                             <input type="text" name="name" class="form-control" value="{{ $t->name }}" id="input" placeholder="Name" required>

@@ -50,8 +50,7 @@ class TodoController extends Controller
     {
         //
         Todo::create([
-			'name' => $request->name,
-			'isDone' => 0
+			'name' => $request->name
 		]);
         
 		return redirect('todo')->with('status', 'Task created!');
@@ -96,7 +95,7 @@ class TodoController extends Controller
 
         $todo->update([
 			'name' => $request->name,
-			'isDone' => $request->status
+			'isDone' => $todo->isDone
 		]);
         
 		return redirect('todo')->with('status', 'Task updated!');
